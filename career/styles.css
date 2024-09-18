@@ -1,0 +1,79 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: rgb(227, 227, 247);
+    font-size: 70px
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+    color: rgb(227, 227, 247);
+    font-size: 30px
+}
+
+
+body {
+    background-image: url('images/background.jpg');
+    background-size: cover; /* Adjusts the size of the background image */
+    align-items: center;
+}
+
+ul.star-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    text-align: center; /* Center-align the list items */
+}
+
+ul.star-list li {
+    display: inline-flex; /* Use flexbox to align items */
+    align-items: center; /* Align items vertically centered */
+    position: relative; /* For positioning the star */
+    padding-left: 10px; /* Space for the star, adjust as needed */
+    color: white; /* Text color */
+    font-size: 40px; /* Text size */
+    margin: 5px; /* Space between list items */
+    background-color: transparent; /* Transparent background */
+}
+
+ul.star-list li::before {
+    content: '\2605'; /* Unicode for a star character (★) */
+    color: black; /* Color of the star */
+    font-size: 30px; /* Size of the star */
+    margin-right: 10px; /* Space between star and text */
+}
+
+/* Container for text, image, and caption */
+.image-container {
+    text-align: center; /* Center-align all content within the container */
+    max-width: 400px; /* Adjust the max width of the container if needed */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Style for the image */
+.image-container .image {
+    max-width: 100%; /* Ensure the image is responsive and fits within the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between image and caption */
+}
+
+/* Style for the caption */
+.image-container .caption {
+    font-size: 30px; /* Font size for the caption */
+    color: #f9f6f6; /* Caption color */
+    margin-top: 0; /* Remove default margin-top */
+}
+
+a {
+    text-align: center;
+    color: rgb(227, 227, 247);
+    font-size: 30px
+}

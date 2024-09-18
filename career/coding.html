@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <a href="career.html">back</a>
+        <link rel="stylesheet" href="styles.css">
+        <body>
+            <h1>
+                coding skillz
+            </h1>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    margin: 0; /* Remove default margin */
+        }
+
+        .slider-container {
+            margin: 20px 0;
+            text-align: center;
+            width: 300px; /* Set a width for the sliders */
+        }
+        input[type="range"] {
+            width: 100%; /* Make the slider take the full width of its container */
+        }
+        #percentageValue1, #percentageValue2, #percentageValue3, 
+        #percentageValue4, #percentageValue5, #percentageValue6 {
+            font-size: 30px;
+            margin-top: 10px;
+            color: aliceblue;
+            font-weight: bolder;
+        }
+        label {
+            color: aliceblue;
+            font-size: 24px; /* Adjust the font size as needed */
+            font-weight: bold; /* Make the labels bold */
+            margin-bottom: 5px; /* Space between the label and slider */
+            display: block; /* Makes the label take up the full width */
+            text-align: center; /* Center-aligns the label text */
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none; /* Remove default styling for webkit browsers */
+            width: 100%; /* Full width */
+            height: 8px; /* Height of the track */
+            background: purple; /* Track color */
+            border-radius: 5px; /* Rounded corners */
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Remove default thumb styling */
+            appearance: none; /* Remove default thumb styling for other browsers */
+            width: 20px; /* Thumb width */
+            height: 20px; /* Thumb height */
+            background: white; /* Thumb color */
+            border-radius: 50%; /* Rounded thumb */
+            cursor: pointer; /* Pointer cursor */
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 20px; /* Thumb width */
+            height: 20px; /* Thumb height */
+            background: white; /* Thumb color */
+            border-radius: 50%; /* Rounded thumb */
+            cursor: pointer; /* Pointer cursor */
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="slider-container">
+    <label for="slider1">HTML + CSS</label>
+    <input type="range" id="slider1" min="0" max="100" value="50">
+    <div id="percentageValue1">50%</div>
+</div>
+
+<div class="slider-container">
+    <label for="slider2">JavaScript</label>
+    <input type="range" id="slider2" min="0" max="100" value="50">
+    <div id="percentageValue2">50%</div>
+</div>
+
+<div class="slider-container">
+    <label for="slider3">Python</label>
+    <input type="range" id="slider3" min="0" max="100" value="50">
+    <div id="percentageValue3">50%</div>
+</div>
+
+<div class="slider-container">
+    <label for="slider4">Unity</label>
+    <input type="range" id="slider4" min="0" max="100" value="50">
+    <div id="percentageValue4">50%</div>
+</div>
+
+<div class="slider-container">
+    <label for="slider5">SQL</label>
+    <input type="range" id="slider5" min="0" max="100" value="50">
+    <div id="percentageValue5">50%</div>
+</div>
+
+<div class="slider-container">
+    <label for="slider6">React</label>
+    <input type="range" id="slider6" min="0" max="100" value="50">
+    <div id="percentageValue6">50%</div>
+</div>
+
+<script>
+    const sliders = [
+        { slider: document.getElementById('slider1'), output: document.getElementById('percentageValue1') },
+        { slider: document.getElementById('slider2'), output: document.getElementById('percentageValue2') },
+        { slider: document.getElementById('slider3'), output: document.getElementById('percentageValue3') },
+        { slider: document.getElementById('slider4'), output: document.getElementById('percentageValue4') },
+        { slider: document.getElementById('slider5'), output: document.getElementById('percentageValue5') },
+        { slider: document.getElementById('slider6'), output: document.getElementById('percentageValue6') }
+    ];
+
+    sliders.forEach(({ slider, output }, index) => {
+        // Load saved value from local storage if it exists
+        const savedValue = localStorage.getItem(`sliderValue${index + 1}`);
+        if (savedValue) {
+            slider.value = savedValue;
+            output.innerHTML = savedValue + '%';
+        }
+
+        slider.oninput = function() {
+            output.innerHTML = this.value + '%';
+            // Save the current value in local storage
+            localStorage.setItem(`sliderValue${index + 1}`, this.value);
+        };
+    });
+</script>
+
+</body>
+</html>
